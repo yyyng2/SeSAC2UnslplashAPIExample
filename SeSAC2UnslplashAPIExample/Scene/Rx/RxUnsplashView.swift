@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UnsplashView: BaseView {
+class RxUnsplashView: BaseView {
 
     let searchBar: UISearchBar = {
        let searchBar = UISearchBar()

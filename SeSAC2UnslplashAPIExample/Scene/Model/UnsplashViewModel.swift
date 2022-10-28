@@ -8,6 +8,7 @@
 import Foundation
 
 import RxSwift
+import RxCocoa
 
 enum SearchError: Error {
     case noPhoto
@@ -17,6 +18,9 @@ enum SearchError: Error {
 class UnsplashViewModel {
     
     var photoList = PublishSubject<SearchPhoto>()
+    
+    //Relay는 accept가능 error처리 불가능
+    // var photoList = PublishRelay<SearchPhoto>()
     
     func requestSearchPhoto(query: String) {
         APIService.searchPhoto(query: query) { [weak self] photo, statusCode, error in

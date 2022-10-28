@@ -20,12 +20,15 @@
 		18F63DD02908DB1A00E05828 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F63DCF2908DB1A00E05828 /* APIKey.swift */; };
 		18F63DD22908DB8100E05828 /* SearchPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F63DD12908DB8100E05828 /* SearchPhoto.swift */; };
 		18F63DD42908DC1100E05828 /* CObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F63DD32908DC1100E05828 /* CObservable.swift */; };
-		18F63DD62908E43100E05828 /* UnsplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F63DD52908E43100E05828 /* UnsplashView.swift */; };
-		18F63DD82908E43E00E05828 /* UnsplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F63DD72908E43E00E05828 /* UnsplashViewController.swift */; };
+		18F63DD62908E43100E05828 /* RxUnsplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F63DD52908E43100E05828 /* RxUnsplashView.swift */; };
+		18F63DD82908E43E00E05828 /* RxUnsplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F63DD72908E43E00E05828 /* RxUnsplashViewController.swift */; };
 		18F63DDC2908E4D000E05828 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 18F63DDB2908E4D000E05828 /* SnapKit */; };
 		18F63DE12908E55800E05828 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F63DE02908E55800E05828 /* BaseView.swift */; };
 		18F63DE32908E61C00E05828 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F63DE22908E61C00E05828 /* BaseViewController.swift */; };
 		18F63DE62908E75F00E05828 /* UnsplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F63DE52908E75F00E05828 /* UnsplashViewModel.swift */; };
+		18F63DF5290BE98A00E05828 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F63DF4290BE98A00E05828 /* MainView.swift */; };
+		18F63DF7290BE99300E05828 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F63DF6290BE99300E05828 /* MainViewController.swift */; };
+		18F63DFA290BEF0B00E05828 /* MainCustomButtom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F63DF9290BEF0B00E05828 /* MainCustomButtom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,11 +43,14 @@
 		18F63DCF2908DB1A00E05828 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		18F63DD12908DB8100E05828 /* SearchPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhoto.swift; sourceTree = "<group>"; };
 		18F63DD32908DC1100E05828 /* CObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CObservable.swift; sourceTree = "<group>"; };
-		18F63DD52908E43100E05828 /* UnsplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashView.swift; sourceTree = "<group>"; };
-		18F63DD72908E43E00E05828 /* UnsplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashViewController.swift; sourceTree = "<group>"; };
+		18F63DD52908E43100E05828 /* RxUnsplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxUnsplashView.swift; sourceTree = "<group>"; };
+		18F63DD72908E43E00E05828 /* RxUnsplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxUnsplashViewController.swift; sourceTree = "<group>"; };
 		18F63DE02908E55800E05828 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		18F63DE22908E61C00E05828 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		18F63DE52908E75F00E05828 /* UnsplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashViewModel.swift; sourceTree = "<group>"; };
+		18F63DF4290BE98A00E05828 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		18F63DF6290BE99300E05828 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		18F63DF9290BEF0B00E05828 /* MainCustomButtom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCustomButtom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,11 +132,62 @@
 		18F63DE42908E68F00E05828 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				18F63DD52908E43100E05828 /* UnsplashView.swift */,
-				18F63DE52908E75F00E05828 /* UnsplashViewModel.swift */,
-				18F63DD72908E43E00E05828 /* UnsplashViewController.swift */,
+				18F63DF3290BE97400E05828 /* Main */,
+				18F63DF2290BE8D800E05828 /* Model */,
+				18F63DF1290BE85600E05828 /* Rx */,
+				18F63DF0290BE84E00E05828 /* MVVM */,
+				18F63DEF290BE84700E05828 /* MVC */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		18F63DEF290BE84700E05828 /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MVC;
+			sourceTree = "<group>";
+		};
+		18F63DF0290BE84E00E05828 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		18F63DF1290BE85600E05828 /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				18F63DD52908E43100E05828 /* RxUnsplashView.swift */,
+				18F63DD72908E43E00E05828 /* RxUnsplashViewController.swift */,
+			);
+			path = Rx;
+			sourceTree = "<group>";
+		};
+		18F63DF2290BE8D800E05828 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18F63DE52908E75F00E05828 /* UnsplashViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18F63DF3290BE97400E05828 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				18F63DF8290BEEF400E05828 /* Resource */,
+				18F63DF4290BE98A00E05828 /* MainView.swift */,
+				18F63DF6290BE99300E05828 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		18F63DF8290BEEF400E05828 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				18F63DF9290BEF0B00E05828 /* MainCustomButtom.swift */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,16 +274,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18F63DFA290BEF0B00E05828 /* MainCustomButtom.swift in Sources */,
 				18F63DD42908DC1100E05828 /* CObservable.swift in Sources */,
+				18F63DF7290BE99300E05828 /* MainViewController.swift in Sources */,
+				18F63DF5290BE98A00E05828 /* MainView.swift in Sources */,
 				18F63DE32908E61C00E05828 /* BaseViewController.swift in Sources */,
 				18F63DAC2908D9FF00E05828 /* AppDelegate.swift in Sources */,
 				18F63DE62908E75F00E05828 /* UnsplashViewModel.swift in Sources */,
 				18F63DCC2908DAD500E05828 /* APIService.swift in Sources */,
 				18F63DAE2908D9FF00E05828 /* SceneDelegate.swift in Sources */,
-				18F63DD82908E43E00E05828 /* UnsplashViewController.swift in Sources */,
+				18F63DD82908E43E00E05828 /* RxUnsplashViewController.swift in Sources */,
 				18F63DD22908DB8100E05828 /* SearchPhoto.swift in Sources */,
 				18F63DE12908E55800E05828 /* BaseView.swift in Sources */,
-				18F63DD62908E43100E05828 /* UnsplashView.swift in Sources */,
+				18F63DD62908E43100E05828 /* RxUnsplashView.swift in Sources */,
 				18F63DD02908DB1A00E05828 /* APIKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

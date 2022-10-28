@@ -11,8 +11,8 @@ import Kingfisher
 import RxSwift
 import RxCocoa
 
-class UnsplashViewController: BaseViewController {
-    var mainView = UnsplashView()
+class RxUnsplashViewController: BaseViewController {
+    var mainView = RxUnsplashView()
     
     var viewModel = UnsplashViewModel()
     
@@ -76,7 +76,7 @@ class UnsplashViewController: BaseViewController {
     }
     
 }
-extension UnsplashViewController: UICollectionViewDelegate {
+extension RxUnsplashViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
 //        guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
@@ -94,7 +94,7 @@ extension UnsplashViewController: UICollectionViewDelegate {
 //    }
 //}
 
-extension UnsplashViewController {
+extension RxUnsplashViewController {
     private func createLayout() -> UICollectionViewLayout {
         let config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
         let layout = UICollectionViewCompositionalLayout.list(using: config)
