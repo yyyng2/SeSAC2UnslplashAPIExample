@@ -8,6 +8,22 @@
 import UIKit
 
 class MainView: BaseView {
+    let vcStoryboardBaseButton: MainCustomButton = {
+        let button = MainCustomButton ()
+      
+        button.setBackgroundColor(string: "StoryboardBaseVC", color: .white)
+        
+        return button
+    }()
+    
+    let vcCodeBaseButton: MainCustomButton = {
+        let button = MainCustomButton ()
+        
+        button.setBackgroundColor(string: "CodeBaseVC", color: .systemCyan)
+        
+        return button
+    }()
+    
     let mvcStoryboardBaseButton: MainCustomButton = {
         let button = MainCustomButton ()
       
@@ -41,7 +57,7 @@ class MainView: BaseView {
     override func configure() {
         super.configure()
         backgroundColor = .white
-        [mvcStoryboardBaseButton, mvcCodeBaseButton, mvvmButton, rxButton].forEach {
+        [vcStoryboardBaseButton, vcCodeBaseButton, mvcStoryboardBaseButton, mvcCodeBaseButton, mvvmButton, rxButton].forEach {
             self.addSubview($0)
         }
     }
@@ -49,10 +65,18 @@ class MainView: BaseView {
     override func setConstraints() {
         super.setConstraints()
         NSLayoutConstraint.activate([
-            mvcStoryboardBaseButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            vcStoryboardBaseButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            vcStoryboardBaseButton.widthAnchor.constraint(equalToConstant: 300),
+            vcStoryboardBaseButton.heightAnchor.constraint(equalToConstant: 50),
+            vcStoryboardBaseButton.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -150),
+            vcCodeBaseButton.topAnchor.constraint(equalTo: vcStoryboardBaseButton.bottomAnchor),
+            vcCodeBaseButton.widthAnchor.constraint(equalToConstant: 300),
+            vcCodeBaseButton.heightAnchor.constraint(equalToConstant: 50),
+            vcCodeBaseButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            mvcStoryboardBaseButton.topAnchor.constraint(equalTo: vcCodeBaseButton.bottomAnchor),
             mvcStoryboardBaseButton.widthAnchor.constraint(equalToConstant: 300),
             mvcStoryboardBaseButton.heightAnchor.constraint(equalToConstant: 50),
-            mvcStoryboardBaseButton.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -100),
+            mvcStoryboardBaseButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             mvcCodeBaseButton.topAnchor.constraint(equalTo: mvcStoryboardBaseButton.bottomAnchor),
             mvcCodeBaseButton.widthAnchor.constraint(equalToConstant: 300),
             mvcCodeBaseButton.heightAnchor.constraint(equalToConstant: 50),

@@ -19,13 +19,19 @@ class MainViewController: BaseViewController {
         super.viewDidLoad()
         
         setButton()
-        
+      
     }
     
     func setButton() {
-        
+        mainView.vcStoryboardBaseButton.addTarget(self, action: #selector(vcStoryboardButtonTapped), for: .touchUpInside)
         
         mainView.rxButton.addTarget(self, action: #selector(rxButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc func vcStoryboardButtonTapped() {
+        let storyBoard = UIStoryboard(name: "StoryboardBaseVC", bundle: nil)
+        guard let vc = storyBoard.instantiateViewController(withIdentifier: "StoryboardBaseVCViewController") as? StoryboardBaseVCViewController else { return }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func rxButtonTapped() {

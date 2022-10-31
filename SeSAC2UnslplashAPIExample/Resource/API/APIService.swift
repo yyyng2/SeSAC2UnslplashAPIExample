@@ -10,27 +10,7 @@ import Foundation
 import Alamofire
 
 // MARK: - Result
-struct SearchResult: Codable, Hashable {
-     
-    let id: String
-    let urls: Urls
-    let likes: Int
 
-    enum CodingKeys: String, CodingKey {
-        case id
-        case urls, likes
-    }
-}
-
-struct Urls: Codable, Hashable {
-    let raw, full, regular, small: String
-    let thumb, smallS3: String
-
-    enum CodingKeys: String, CodingKey {
-        case raw, full, regular, small, thumb
-        case smallS3 = "small_s3"
-    }
-}
 
 class APIService {
     static func searchPhoto(query: String, completion: @escaping (SearchPhoto?, Int?, Error?) -> Void) {
