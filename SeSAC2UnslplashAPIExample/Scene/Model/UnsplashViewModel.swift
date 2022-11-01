@@ -10,18 +10,25 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+protocol CommonViewModel {
+    associatedtype Input
+    associatedtype Output
+    
+    func transform(input: Input) -> Output
+}
+
 enum SearchError: Error {
     case noPhoto
     case ServerError
 }
 
-class UnsplashViewModel {
+class UnsplashViewModel: CommonViewModel {
     
     var photoList = PublishSubject<SearchPhoto>()
-    
     //Relay는 accept가능 error처리 불가능
     // var photoList = PublishRelay<SearchPhoto>()
     
+
     func requestSearchPhoto(query: String) {
         APIService.searchPhoto(query: query) { [weak self] photo, statusCode, error in
             
@@ -37,4 +44,25 @@ class UnsplashViewModel {
             self?.photoList.onNext(photo)
         }
     }
+    
+    
+    struct Input {
+        let searchText: ControlProperty<String?>
+    }
+    
+    struct Output {
+        let searchText: Observable<String>
+    }
+
+    func transform(input: Input) -> Output {
+        
+        let text = input.searchText
+            .orEmpty
+            .debounce(RxTimeInterval.seconds(1), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+        
+        return Output(searchText: text)
+    }
+    
+    
 }
