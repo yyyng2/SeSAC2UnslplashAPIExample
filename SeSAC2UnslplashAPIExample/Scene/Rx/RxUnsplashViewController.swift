@@ -43,6 +43,20 @@ class RxUnsplashViewController: BaseViewController {
     }
     
     func bindData() {
+        
+        let input = UnsplashViewModel.Input(searchText: mainView.searchBar.rx.text)
+        
+        let output = viewModel.transform(input: input)
+        
+        output.searchText
+            .withUnretained(self)
+            .subscribe { (vc, value) in
+                vc.viewModel.requestSearchPhoto(query: value)
+            }
+            .disposed(by: disposeBag)
+        
+        
+        // subscribe는 input/output어떻게 하나
         viewModel.photoList
             .withUnretained(self)
             .subscribe (onNext: { (vc, photo) in
@@ -60,14 +74,14 @@ class RxUnsplashViewController: BaseViewController {
             })
             .disposed(by: disposeBag)
         
-        mainView.searchBar.rx.text.orEmpty
-            .debounce(.seconds(1), scheduler: MainScheduler.instance)
-            .distinctUntilChanged()
-            .withUnretained(self)
-            .subscribe { (vc, value) in
-                vc.viewModel.requestSearchPhoto(query: value)
-            }
-            .disposed(by: disposeBag)
+//        mainView.searchBar.rx.text.orEmpty
+//            .debounce(.seconds(1), scheduler: MainScheduler.instance)
+//            .distinctUntilChanged()
+//            .withUnretained(self)
+//            .subscribe { (vc, value) in
+//                vc.viewModel.requestSearchPhoto(query: value)
+//            }
+//            .disposed(by: disposeBag)
     }
     
     override func configure() {
