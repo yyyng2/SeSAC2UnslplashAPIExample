@@ -23,7 +23,6 @@ class RxUnsplashViewController: BaseViewController {
     var dataSource: UICollectionViewDiffableDataSource<Int, SearchResult>!
     
     override func loadView() {
-        super.loadView()
         self.view = mainView
     }
     
